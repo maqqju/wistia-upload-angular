@@ -1,0 +1,21 @@
+{
+  "name": "process street",
+  "authors": [
+    "maqqju <matthewcroker@gmail.com>"
+  ],
+  "description": "Upload Video to Wistia",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.6.9",
+    "blueimp-file-upload": "^9.21.0"
+  }
+}

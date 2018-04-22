@@ -1,0 +1,20 @@
+{
+  "name": "process-street",
+  "version": "1.0.0",
+  "description": "Uploading video to Wistia",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -p 6969",
+    "test": "test"
+  },
+  "keywords": [
+    "wistia",
+    "upload",
+    "angular"
+  ],
+  "author": "matthewcroker_AT_gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}
