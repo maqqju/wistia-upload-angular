@@ -10,6 +10,10 @@ angular.module("UploadToWistia").component("wistiaFileUpload", {
 		redirect : window.location.href+"&%s",
 	}
 
+	$scope.showEmbed = false;
+	$scope.progressing = false;
+	$scope.percentageProgress = 0;
+
 	$scope.$watch("$ctrl", function(o, n) {
 		if (!n.apiPassword) {
 			return;
@@ -25,10 +29,14 @@ angular.module("UploadToWistia").component("wistiaFileUpload", {
 			var embeddedElement = angular.element(document.querySelector(".wistia_embed"));
 			embeddedElement.addClass("wistia_async_"+data.hashed_id);
 			$scope.showEmbed = true;
+			$scope.progressing = false;
 		});
 	});
 
 	$scope.$on('fileuploadprogress', function (e, data) {
-		console.log("fileuploadprogress", {e:event, data: data})
+		$scope.progressing = true;
+		//console.log("fileuploadprogress", {e:event, data: data})
+		$scope.percentageProgress = (data._progress.loaded / data._progress.total) * 100;
+		console.log(data._progress.loaded + " / " + data._progress.total);
 	});
 }]);

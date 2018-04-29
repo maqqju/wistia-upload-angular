@@ -1,7 +1,8 @@
 angular.module("UploadToWistia",
 	[
 	"blueimp.fileupload",
-	"ngRoute"
+	"ngRoute",
+	"ui.bootstrap"
 	])
    .config([
    	"$routeProvider", 

@@ -1,9 +1,10 @@
 <div file-upload="options">
-	<span class="btn btn-success fileinput-button" ng-class="{disabled: disabled}" ng-show="!showEmbed">
+	<span class="btn btn-success fileinput-button" ng-class="{disabled: disabled}" ng-show="!showEmbed && !progressing">
         <i class="glyphicon glyphicon-plus"></i>
         <span>Upload File</span>
         <input type="file" name="file" ng-disabled="disabled">
     </span>
+    <uib-progressbar ng-show="progressing" max="100" value="percentageProgress" animate="false" value="dynamic" type="success"><b>{{percentageProgress}}%</b></uib-progressbar>
     <div ng-show="showEmbed">
 		<script src="//fast.wistia.com/assets/external/E-v1.js" async></script>
 		<div class="wistia_embed" style="height:349px;width:620px">&nbsp;</div>
