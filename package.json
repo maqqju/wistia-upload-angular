@@ -16,8 +16,8 @@
   "license": "ISC",
   "dependencies": {
     "angular": "^1.6.10",
-    "angular-bootstrap": "^0.12.2",
     "angular-route": "^1.6.10",
+    "angular-ui-bootstrap": "^2.5.6",
     "blueimp-file-upload": "^9.21.0",
     "express": "^4.16.3",
     "jquery": "^3.3.1"

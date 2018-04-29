@@ -32,7 +32,7 @@ function WistiaFileUploadCtrl($scope) {
 
 	$scope.$on('fileuploadprogress', function (e, data) {
 		$scope.progressing = true;
-		$scope.percentageProgress = (data._progress.loaded / data._progress.total) * 100;
+		$scope.percentageProgress = Math.floor((data._progress.loaded / data._progress.total) * 100);
 	});
 }
 
