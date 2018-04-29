@@ -1,4 +1,13 @@
-<form id="fileupload" action="https://upload.wistia.com/" enctype="multipart/form-data" method="POST" file-upload="options" fileupload="upload">
+<form enctype="multipart/form-data" method="POST" file-upload="options">
+	<span class="btn btn-success fileinput-button" ng-class="{disabled: disabled}">
+        <i class="glyphicon glyphicon-plus"></i>
+        <span>Upload File</span>
+        <input type="file" name="file" ng-disabled="disabled">
+    </span>
+    <!-- <input type="hidden" name="api_password" ng-value="apiPassword"> -->
+</form>
+<!-- <form id="fileupload" action="https://upload.wistia.com/" enctype="multipart/form-data" method="POST" file-upload="options" fileupload="upload">
 	<input type="file" name="file" ng-disabled="disabled">
 	<input type="hidden" name="api_password" ng-disabled="disabled">
-</form>
+	<button ng-click="add"> Add File</button>
+</form> -->
