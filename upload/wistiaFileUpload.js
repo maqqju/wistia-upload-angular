@@ -8,7 +8,8 @@ angular.module("UploadToWistia").component("wistiaFileUpload", {
 	$scope.options = {
 		url : "https://upload.wistia.com/",
 		singleFileUploads : true,
-		postMessage : true,
+		forceIframeTransport : true,
+		redirect : window.location.href+"&%s",
 		headers : {
 			"Content-Type" :"multipart/form-data"
 		}
@@ -30,7 +31,7 @@ angular.module("UploadToWistia").component("wistiaFileUpload", {
 
 	$scope.$on("fileuploadadd", function(ev, data) {
 		fileUploadScope = data.scope;
-		file = data.files;
+		$scope.options.formData.file = data.files[0];
 
 		fileUploadScope.send(data);
 	});
