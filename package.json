@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm install && node server.js",
-    "test": "jasmine"
+    "test": "./node_modules/.bin/karma start"
   },
   "keywords": [
     "wistia",
