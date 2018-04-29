@@ -2,12 +2,7 @@
 <html>
 <head>
 	<title>Uploading to Wistia</title>
-	<script src="node_modules/jquery/dist/jquery.min.js"></script>
-	<script src="node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
-	<script src="node_modules/blueimp-file-upload/js/cors/jquery.xdr-transport.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
-	
 	<style type="text/css">
 		.fileinput-button {
 		  position: relative;
@@ -30,6 +25,12 @@
 <body>
 	<div ng-app="UploadToWistia" ng-view>
 	</div>
+	<script src="node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+	<script src="node_modules/blueimp-file-upload/js/cors/jquery.xdr-transport.js"></script>
+	<script src="node_modules/blueimp-file-upload/js/cors/jquery.postmessage-transport.js"></script>
+	<script src="node_modules/blueimp-file-upload/js/jquery.fileupload.js"></script>
+	
 	<script src="node_modules/angular/angular.min.js"></script>
 	<script src="node_modules/angular-route/angular-route.min.js"></script>
 	<script src="node_modules/blueimp-file-upload/js/jquery.fileupload-angular.js"></script>

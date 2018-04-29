@@ -2,17 +2,12 @@ angular.module("UploadToWistia").component("wistiaFileUpload", {
 	templateUrl : "upload/wistiaFileUpload.html",
 	controller : "WistiaFileUploadCtrl",
 	bindings : {
-		apiPassword : "@"		
+		apiPassword : "@"
 	}
 }).controller("WistiaFileUploadCtrl", ["$scope","$element", function($scope, $element) {
 	$scope.options = {
 		url : "https://upload.wistia.com/",
-		singleFileUploads : true,
-		forceIframeTransport : true,
 		redirect : window.location.href+"&%s",
-		headers : {
-			"Content-Type" :"multipart/form-data"
-		}
 	}
 
 	$scope.$watch("$ctrl", function(o, n) {
@@ -20,19 +15,20 @@ angular.module("UploadToWistia").component("wistiaFileUpload", {
 			return;
 		}
 
-		$scope.options.formData = {
-			api_password : n.apiPassword
-		};
+		$scope.options.url += "?api_password="+n.apiPassword
 
 	}, true);
 
-	var fileUploadScope = null;
-	var file = null;
-
 	$scope.$on("fileuploadadd", function(ev, data) {
-		fileUploadScope = data.scope;
-		$scope.options.formData.file = data.files[0];
+		var fileUploadScope = data.scope;
+		fileUploadScope.send(data).done(function(data) {
+			var embeddedElement = angular.element(document.querySelector(".wistia_embed"));
+			embeddedElement.addClass("wistia_async_"+data.hashed_id);
+			$scope.showEmbed = true;
+		});
+	});
 
-		fileUploadScope.send(data);
+	$scope.$on('fileuploadprogress', function (e, data) {
+		console.log("fileuploadprogress", {e:event, data: data})
 	});
 }]);
