@@ -26,12 +26,13 @@
 	</style>
 </head>
 <body>
-	<div ng-app="UploadToWistia">
-		<wistia-file-upload id="wistiaUpload" api-password=""></wistia-file-upload>
+	<div ng-app="UploadToWistia" ng-view>
 	</div>
 	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-route/angular-route.min.js"></script>
 	<script src="bower_components/blueimp-file-upload/js/jquery.fileupload-angular.js"></script>
 	<script src="index.js"></script>
 	<script src="upload/wistiaFileUpload.js"></script>
+	<script src="pages/testPage.js"></script>
 </body>
 </html>
